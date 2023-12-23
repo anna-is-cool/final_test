@@ -1,5 +1,3 @@
-package first;
-
 import first.AllOccupiedException;
 import first.Callable;
 import first.Elevator;
@@ -10,14 +8,15 @@ public class ElevatorController implements Callable, FindFree {
     public Elevator free(){
         if (last == null) return null;
         Elevator start = last;
-        while ( (last.status != Status.FREE) && (last.next != start)){
+        while ( (last.status != Status.FREE) && (last.next != start)) {
             last = last.next;
         }
         if (last.status != Status.FREE) return null;
         return last;
     }
+    
     @Override
-    public Elevator call(Situation situation){
+    public Elevator call(Situation situation) {
         try {
             find(situation);
             last.status = Status.TAKEN;
@@ -40,7 +39,7 @@ public class ElevatorController implements Callable, FindFree {
         last.next = elevator;
         elevator.next = start;
     }
-    private void find(Situation situation) throws AllOccupiedException{
+    private void find(Situation situation) throws AllOccupiedException {
         last = free();
         if (last == null) throw new AllOccupiedException("Все лифты заняты");
         switch (situation) {
