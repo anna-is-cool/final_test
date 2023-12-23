@@ -1,6 +1,4 @@
-package first;
-
-import first.Elevator;
+import Elevator;
 
 public class OddElevator extends Elevator {
 }
