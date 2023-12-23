@@ -1,6 +1,6 @@
-import first.AllOccupiedException;
-import first.Callable;
-import first.Elevator;
+import AllOccupiedException;
+import Callable;
+import Elevator;
 
 public class ElevatorController implements Callable, FindFree {
     public Elevator last;
