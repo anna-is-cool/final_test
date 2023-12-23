@@ -1,5 +1,3 @@
-package first;
-
 public abstract class Elevator {
     Status status;
     Elevator next;
