@@ -1,5 +1,5 @@
-import first.ElevatorController;
-import first.EvenElevator;
+import ElevatorController;
+import EvenElevator;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,12 +24,11 @@ public class Main {
         for (int i = 0; i < 20; i++) {
             System.out.println(elevatorController.last);
             elevatorController.last = elevatorController.last.next;
-
         }
 
         for (int i = 0; i < 20; i++) {
             int random = (int) (Math.random() * 3);
-            switch (random){
+            switch (random) {
                 case 0: elevatorController.call(Situation.EVEN);
                 case 1: elevatorController.call(Situation.ODD);
                 case 2: elevatorController.call(Situation.WORKER);
